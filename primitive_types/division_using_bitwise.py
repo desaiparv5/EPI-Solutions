@@ -2,7 +2,7 @@
 # NOT WORKING
 
 import time
-from multiplication import add
+from multiplication_using_bitwise import add
 
 
 NUM_BITS = 8
