@@ -44,7 +44,6 @@ def reconstruct_binary_tree_from_postorder_inorder_traversal(postorder_traversal
     return tree
 
 
-
 def main():
     node1 = BinaryTreeNode(5)
     node2 = BinaryTreeNode(1)
