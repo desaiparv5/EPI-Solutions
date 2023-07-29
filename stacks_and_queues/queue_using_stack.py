@@ -21,7 +21,7 @@ class Queue:
 def queue_using_stack():
     queue = Queue()
     # test this using debugger
-    pass
+    print(queue)
 
 
 def main():

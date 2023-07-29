@@ -57,7 +57,7 @@ def implement_max_queue():
     queue = MaxQueue()
     queue = MaxQueueFromStack()
     # use debugger to test
-    pass
+    print(queue)
 
 
 def main():

@@ -15,7 +15,7 @@ class Color(IntEnum):
         return f'{self.name}'
 
 
-def dutch_national_flag_single_pass(arr):
+def dutch_national_flag_single_iter(arr):
     # Standard Dutch National Flag Problem
     low = -1
     equal = 0
@@ -119,7 +119,7 @@ def main():
 
     arr = test_arr_dutch.copy()
     start_time = process_time_ns()
-    dutch_national_flag_single_pass(arr)
+    dutch_national_flag_single_iter(arr)
     print(f"Time taken: {(process_time_ns() - start_time)}")
 
     arr = test_arr_dutch.copy()

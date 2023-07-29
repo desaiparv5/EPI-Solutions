@@ -34,7 +34,7 @@ class CircularQueue:
 def implment_circular_queue():
     queue = CircularQueue(4)
     # use debugger to test
-    pass
+    print(queue)
 
 
 def main():

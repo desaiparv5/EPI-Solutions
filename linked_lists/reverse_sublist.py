@@ -5,7 +5,7 @@ def reverse_a_sublist(ll: LinkedList, start: int, end: int) -> None:
     if start == end:
         return
     if end < 0 and end > len(ll):
-        raise Exception("Invalid arguments passed")
+        raise Exception("Invalid arguments")
     
     dummy_head = Node("", next=ll.head)
     sublist_head, curr_node = dummy_head, ll.head

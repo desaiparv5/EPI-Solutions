@@ -42,7 +42,7 @@ class MaxStack:
 def max_stack_api():
     stack = MaxStack()
     # use debugger to test
-    pass
+    print(stack)
 
 
 def main():

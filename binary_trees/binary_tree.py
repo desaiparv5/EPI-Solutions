@@ -135,6 +135,3 @@ class BinaryTree:
             return None
         _postorder_traversal(self._root)
         return postorder_list
-
-    def _create_tree_from_preorder_values(self, values):
-        pass
