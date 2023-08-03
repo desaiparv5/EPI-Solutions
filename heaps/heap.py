@@ -15,6 +15,9 @@ class Heap(ABC):
     def __str__(self) -> str:
         return self.__repr__()
 
+    def __bool__(self) -> bool:
+        return bool(len(self))
+
     def __left_child_index(self, parent_index : int) -> int:
         return 2 * parent_index + 1
 
@@ -108,6 +111,10 @@ class MaxHeap(Heap):
             self._heapify_left_side(index)
         if  right_child and right_child >= self._list[index]:
             self._heapify_right_side(index)
+    
+    def largest(self):
+        if self:
+            return self._list[0]
 
 
 class MinHeap(Heap):
@@ -128,3 +135,7 @@ class MinHeap(Heap):
             self._heapify_left_side(index)
         if  right_child and right_child <= self._list[index]:
             self._heapify_right_side(index)
+
+    def smallest(self) -> typing.Any:
+        if self:
+            return self._list[0]
