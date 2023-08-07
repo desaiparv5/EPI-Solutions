@@ -9,8 +9,14 @@ class ListTraversal:
     def __gt__(self, _obj: "ListTraversal"):
         return self.value > _obj.value
 
+    def __ge__(self, _obj: "ListTraversal"):
+        return self.value >= _obj.value
+
     def __lt__(self, _obj: "ListTraversal"):
         return self.value < _obj.value
+
+    def __le__(self, _obj: "ListTraversal"):
+        return self.value <= _obj.value
     
     def __eq__(self, _obj: "ListTraversal"):
         return self.value == _obj.value
