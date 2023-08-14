@@ -83,6 +83,10 @@ class Heap(ABC):
             self._list = self._list[:-1]
             self._heapify_down(0)
         return val
+    
+    def peek(self) -> typing.Any:
+        if self:
+            return self._list[0]
 
     @abstractmethod
     def _heapify_up(self, index: int):

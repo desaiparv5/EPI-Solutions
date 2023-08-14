@@ -8,7 +8,7 @@ class Star:
         self.z = z
 
     @property
-    def distance(self):
+    def distance(self) -> float:
         return (self.x**2 + self.y**2 + self.z**2)**(1/2)
 
     def __gt__(self, _obj: "Star"):
