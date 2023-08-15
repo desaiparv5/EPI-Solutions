@@ -1,7 +1,21 @@
 import typing
+from abc import ABC, abstractmethod
 
 
-class Stack:
+class StackInterface(ABC):
+    @abstractmethod
+    def push(self, val) -> None:
+        pass
+
+    @abstractmethod
+    def pop(self) -> typing.Any:
+        pass
+
+    @abstractmethod
+    def peek(self) -> typing.Any:
+        pass
+
+class Stack(StackInterface):
     def __init__(self, values = None):
         self._stack: list = values if values else []
 
@@ -27,7 +41,21 @@ class Stack:
             yield val
 
 
-class Queue:
+class QueueInteface(ABC):
+    @abstractmethod
+    def enqueue(self, val) -> None:
+        pass
+
+    @abstractmethod
+    def dequeue(self) -> typing.Any:
+        pass
+
+    @abstractmethod
+    def peek(self) -> typing.Any:
+        pass
+
+
+class Queue(QueueInteface):
     def __init__(self, values = None):
         self._queue: list = values if values else []
 

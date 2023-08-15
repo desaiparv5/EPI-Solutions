@@ -1,4 +1,5 @@
-from stack_and_queue import Stack
+import typing
+from stack_and_queue import Stack, StackInterface
 
 
 class MaxStruct:
@@ -7,7 +8,7 @@ class MaxStruct:
         self.count = 1
 
 
-class MaxStack:
+class MaxStack(StackInterface):
     def __init__(self):
         self._stack = Stack()
         self._max_cache = Stack()
@@ -34,6 +35,9 @@ class MaxStack:
             self._max_cache.push(MaxStruct(val))
         else:
             max_value.count += 1
+    
+    def peek(self) -> typing.Any:
+        return self._stack.peek()
     
     def __bool__(self):
         return bool(self._stack)

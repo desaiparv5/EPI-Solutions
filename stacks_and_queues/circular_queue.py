@@ -1,7 +1,9 @@
+import typing
+from stack_and_queue import QueueInteface
 scaling_factor = 2
 
 
-class CircularQueue:
+class CircularQueue(QueueInteface):
     def __init__(self, capacity):
         if capacity <= 0:
             raise Exception
@@ -27,6 +29,9 @@ class CircularQueue:
         self._num_elements -= 1
         return val
     
+    def peek(self) -> typing.Any:
+        return self._values[self._head]
+
     def __repr__(self) -> str:
         return f"[{', '.join(['' if not value else str(value) for value in self._values])}]"
 

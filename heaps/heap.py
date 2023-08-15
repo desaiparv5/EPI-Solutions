@@ -100,7 +100,7 @@ class Heap(ABC):
 class MaxHeap(Heap):
     def _heapify_up(self, index: int):
         parent = self._parent(index)
-        if not parent:
+        if parent is None:
             return
         elif parent < self._list[index]:
             self._heapify_parent(index)
@@ -109,11 +109,11 @@ class MaxHeap(Heap):
         left_child = self._left_child(index)
         right_child = self._right_child(index)
 
-        if not left_child and not right_child:
+        if left_child is None and right_child is None:
             return
-        if left_child and left_child >= self._list[index]:
+        if left_child is not None and left_child >= self._list[index]:
             self._heapify_left_side(index)
-        if  right_child and right_child >= self._list[index]:
+        if  right_child is not None and right_child >= self._list[index]:
             self._heapify_right_side(index)
     
     def largest(self):
@@ -124,7 +124,7 @@ class MaxHeap(Heap):
 class MinHeap(Heap):
     def _heapify_up(self, index: int):
         parent = self._parent(index)
-        if not parent:
+        if parent is None:
             return
         elif parent > self._list[index]:
             self._heapify_parent(index)
@@ -133,11 +133,11 @@ class MinHeap(Heap):
         left_child = self._left_child(index)
         right_child = self._right_child(index)
 
-        if not left_child and not right_child:
+        if left_child is None and right_child is None:
             return
-        if left_child and left_child <= self._list[index]:
+        if left_child is not None and left_child <= self._list[index]:
             self._heapify_left_side(index)
-        if  right_child and right_child <= self._list[index]:
+        if  right_child is not None and right_child <= self._list[index]:
             self._heapify_right_side(index)
 
     def smallest(self) -> typing.Any:

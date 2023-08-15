@@ -1,8 +1,9 @@
-from stack_and_queue import Queue
+import typing
+from stack_and_queue import Queue, QueueInteface
 from max_stack import MaxStack
 
 
-class MaxQueue:
+class MaxQueue(QueueInteface):
     def __init__(self):
         self._queue = Queue()
         self._max_queue = Queue()
@@ -21,6 +22,9 @@ class MaxQueue:
         if res == self._max_queue.peek():
             self._max_queue.dequeue()
         return res
+    
+    def peek(self) -> typing.Any:
+        return self._queue.peek()
     
     def max(self):
         return self._max_queue.peek()
