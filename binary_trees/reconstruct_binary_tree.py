@@ -1,5 +1,5 @@
 import typing
-from binary_tree import BinaryTree, BinaryTreeNode
+from binary_trees.binary_tree import BinaryTree, BinaryTreeNode
 
 
 def find_node(nodes_list: typing.List[BinaryTreeNode], node: BinaryTreeNode, start_index: int, end_index: int) -> int:
