@@ -101,7 +101,13 @@ class LinkedList:
                 curr_node = curr_node.next
             assert curr_node
             if curr_node.next == node:
-                self.delete_next_node(curr_node) 
+                self.delete_next_node(curr_node)
+    
+    def update_tail(self):
+        curr = self.head
+        while curr and curr.next:
+            curr = curr.next
+        self.tail = curr
 
 
 class DoublyLinkedList(LinkedList):
