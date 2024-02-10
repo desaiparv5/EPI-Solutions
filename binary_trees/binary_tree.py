@@ -23,7 +23,11 @@ class BinaryTreeNode:
     @property
     def parent(self):
         return self._parent
-    
+
+    @value.setter
+    def value(self, val):
+        self._val = val
+
     @right.setter
     def right(self, node: "BinaryTreeNode"):
         self._right = node
@@ -35,32 +39,45 @@ class BinaryTreeNode:
         self._left = node
         if node:
             node.parent = self
-    
+
     @parent.setter
     def parent(self, node: "BinaryTreeNode"):
         self._parent = node
-    
+
     def __repr__(self) -> str:
         return f"{self.value}"
-    
+
     def __float__(self) -> float:
         return float(self.value)
+    
+    def __eq__(self, node: "BinaryTreeNode") -> bool:
+        return node.value == self.value
+
+    def __lt__(self, node: "BinaryTreeNode") -> bool:
+        return node.value > self.value
+
+    def __le__(self, node: "BinaryTreeNode") -> bool:
+        return node.value >= self.value
+
+    def __ge__(self, node: "BinaryTreeNode") -> bool:
+        return node.value <= self.value
+    
+    def __gt__(self, node: "BinaryTreeNode") -> bool:
+        return node.value < self.value
 
 
 class BinaryTree:
-    def __init__(self, preorder_values=None):
-        self._root: BinaryTreeNode = None # type: ignore
-        if preorder_values:
-            self._create_tree_from_preorder_values(preorder_values)
-    
+    def __init__(self):
+        self._root: BinaryTreeNode = None  # type: ignore
+
     @property
     def root(self) -> typing.Union[None, BinaryTreeNode]:
         return self._root
-    
+
     @root.setter
     def root(self, obj: typing.Union[BinaryTreeNode, None]):
         self._root = obj # type: ignore
-    
+
     def __bool__(self):
         return self.root is not None
 

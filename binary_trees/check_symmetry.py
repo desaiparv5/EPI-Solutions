@@ -8,7 +8,7 @@ def is_tree_symmetric(tree: BinaryTree):
     def _helper(root: BinaryTreeNode):
         if not (root.left or root.right):
             return True
-        elif not (root.left and root.right) or root.left.value != root.right.value:
+        elif not (root.left and root.right) or root.left != root.right:
             return False
         else:
             return _helper(root.left) and _helper(root.right)
