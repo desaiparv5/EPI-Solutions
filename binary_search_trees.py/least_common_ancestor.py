@@ -1,8 +1,7 @@
-from typing import Optional
 from binary_search_tree import BinarySearchTree, BinaryTreeNode
 
 
-def least_common_ancestor(tree: BinarySearchTree, node1: int, node2: int):
+def least_common_ancestor(tree: BinarySearchTree, node1: int, node2: int) -> BinaryTreeNode:
     lca = tree.root
     while lca:
         if node1 > lca.value and node2 > lca.value:
@@ -10,7 +9,8 @@ def least_common_ancestor(tree: BinarySearchTree, node1: int, node2: int):
         elif node1 < lca.value and node2 < lca.value:
             lca = lca.left
         else:
-            return lca
+            break        
+    return lca  # type: ignore
 
 def main():
     tree = BinarySearchTree()

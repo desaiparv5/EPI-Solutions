@@ -1,6 +1,8 @@
-from binary_search_tree import BinarySearchTree
+from typing import Optional
+from binary_search_tree import BinarySearchTree, BinaryTreeNode
 
-def first_key_greater_than_k(tree: BinarySearchTree, k: int):
+
+def first_key_greater_than_k(tree: BinarySearchTree, k: int) -> Optional[BinaryTreeNode]:
     node, first_so_far = tree.root, None
     while node:
         if node.value > k:

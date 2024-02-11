@@ -2,7 +2,7 @@ from typing import List
 from binary_search_tree import BinarySearchTree, BinaryTreeNode
 
 
-def reconstruct_bst_from_preorder(preorder_sequence: List) -> BinarySearchTree:
+def reconstruct_bst_from_preorder(preorder_sequence: List[int]) -> BinarySearchTree:
     root_index = [0]
     def reconstruct_bst_helper(lower_bound, upper_bound) -> BinaryTreeNode:
         if root_index[0] >= len(preorder_sequence):

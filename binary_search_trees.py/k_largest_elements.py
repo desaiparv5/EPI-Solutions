@@ -1,8 +1,8 @@
-from typing import Optional
+from typing import List, Optional
 from binary_search_tree import BinarySearchTree, BinaryTreeNode
 
 
-def k_largest_elements(tree: BinarySearchTree, k: int):
+def k_largest_elements(tree: BinarySearchTree, k: int) -> List[BinaryTreeNode]:
     k_largest_elements = []
     def k_largest_element_helper(root: Optional[BinaryTreeNode]):
         if root and len(k_largest_elements) < k:

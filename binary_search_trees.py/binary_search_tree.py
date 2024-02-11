@@ -58,9 +58,9 @@ class BinarySearchTree(BinaryTree):
         if not root:
             return None
         if node < root:
-            root.left = cls.delete_node(root.left, node)
+            root.left = cls.delete_node(root.left, node)  # type: ignore
         elif node > root:
-            root.right = cls.delete_node(root.right, node)
+            root.right = cls.delete_node(root.right, node)  # type: ignore
         else:
             if not root.left and not root.right:
                 return None
@@ -70,9 +70,21 @@ class BinarySearchTree(BinaryTree):
                 return root.left
             leftmost_right_node = cls.smallest_node(root.right)
             root.value = leftmost_right_node.value
-            root.right = cls.delete_node(root.right, leftmost_right_node)
+            root.right = cls.delete_node(root.right, leftmost_right_node)  # type: ignore
         return root
 
     def delete(self, key):
         node = BinaryTreeNode(key)
         self.root = self.delete_node(self.root, node)  # type: ignore
+
+    def get_minimum(self):
+        curr_node = self.root
+        while curr_node.left:
+            curr_node = curr_node.left
+        return curr_node
+
+    def get_maximum(self):
+        curr_node = self.root
+        while curr_node.left:
+            curr_node = curr_node.left
+        return curr_node
