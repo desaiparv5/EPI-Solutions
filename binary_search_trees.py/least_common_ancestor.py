@@ -21,7 +21,6 @@ def main():
     tree.add(4)
     tree.add(1)
     tree.add(5)
-    k = 5
     node1 = 2
     node2 = 5
     print(least_common_ancestor(tree, node1, node2))
