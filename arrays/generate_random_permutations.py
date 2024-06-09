@@ -1,4 +1,4 @@
-from primitive_types.generate_uniform_random_numbers import generate_random_number
+from primitive_types.generate_random_numbers import generate_random_number
 
 
 def generate_random_permutation(arr):
