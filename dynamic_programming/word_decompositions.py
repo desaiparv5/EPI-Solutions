@@ -6,7 +6,7 @@ def word_decompositions(s: str, words: List[str]):
     dp[len(s)] = True
     for i in range(len(s) - 1, -1, -1):
         for w in words:
-            if (i + len(w)) < len(s) and s[i:i+len(w)] == w:
+            if (i + len(w)) <= len(s) and s[i:i+len(w)] == w:
                 dp[i] = dp[i + len(w)]
             if dp[i]:
                 break
@@ -23,7 +23,7 @@ def word_decompositions_variant_1(s: str):
 
 
 def main():
-    pass
+    print(word_decompositions("applepenapple", ["apple","pen"]))
 
 
 if __name__ == "__main__":
