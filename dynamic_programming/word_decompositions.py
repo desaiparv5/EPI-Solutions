@@ -14,7 +14,7 @@ def word_decompositions(s: str, words: List[str]):
 
 
 def word_decompositions_variant_1(s: str):
-    # Variant: Every string s has at least one palindromic decomposition, which is the trivial one consisting
+    # TODO: Every string s has at least one palindromic decomposition, which is the trivial one consisting
     # of the individual characters. For example, if s is "0204451881" then "0", "2", "0", "4", "4", "5",
     # "1", "8", "8", "1" is such a trivial decomposition. The minimum decomposition of s is "020" , "44" , "5" ,
     # "1881.". How would you compute a palindromic decomposition of a string s that uses a minimum
