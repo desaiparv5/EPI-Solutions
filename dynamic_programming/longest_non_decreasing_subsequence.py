@@ -33,10 +33,14 @@ def lis_variant_1(seq):
 
 
 def lis_variant_2(seq):
-    # TODO: Define a sequence of numbers (a0,a1,...,an-1) to be alternating if ai < ai+1 for even i and
-    # ai > ai+1 for odd i Given an array of numbers A of length n,find a longest subsequence (i0,.. .,ik-1)
-    # such that (A[i0],A[i1],... ,A[ik-1]) is alternating.
-    pass
+    # Alternating subsequence
+    inc = dec = 1
+    for i in range(1, len(seq)):
+        if seq[i] > seq[i-1]:
+            inc = dec + 1
+        elif seq[i] < seq[i-1]:
+            dec = inc + 1
+    return max(inc, dec)
 
 
 def lis_variant_3(seq):
@@ -78,14 +82,10 @@ def lis_variant_7(seq):
     return len(sub)
 
 
-def lis_variant_8(seq):
-    pass
-
-
 def main():
     print(lis([1,3,6,7,9,4,10,5,6]))
     print(lis_variant_1([1,3,6,7,9,4,10,5,6]))
-    print(lis_variant_8([1,3,6,7,9,4,10,5,6]))
+    print(lis_variant_2([1,3,1,3,1,3,1,3,1]))
 
 
 if __name__ == "__main__":
