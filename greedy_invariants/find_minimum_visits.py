@@ -17,6 +17,7 @@ def find_minimum_visits(intervals: List[Interval]):
             points[-1] = interval.end
     return points
 
+
 def find_minimum_visits_variant_1(intervals: List[Interval]):
     # TODO: You are responsible for the security of a castle. The castle has a circular perimeter. A total
     # of n robots Patrol the perimeter .Each robot is responsible for a closed connected subset of the
